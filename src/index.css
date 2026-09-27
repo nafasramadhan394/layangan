@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #fff6e5;
+  --color-paper-2: #fcebc9;
+  --color-ink: #1f1a3d;
+  --color-ink-soft: #4a4470;
+  --color-muted: #7b7599;
+  --color-kite: #e63946;
+  --color-kite-dark: #b8232f;
+  --color-sun: #ffb703;
+  --color-sea: #1a9e8f;
+  --color-sky: #bfe6ff;
+  --color-sky-deep: #3fa9f5;
+  --color-line: #e8d6b0;
+  --color-good: #2a9d5c;
+  --color-bad: #d62839;
+  --font-display: "Baloo 2", "Trebuchet MS", sans-serif;
+  --font-body: "Plus Jakarta Sans", system-ui, sans-serif;
+  --shadow-hard: 4px 4px 0 0 #1f1a3d;
+  --shadow-hard-sm: 2px 2px 0 0 #1f1a3d;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  background: var(--color-paper);
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior: none;
+}
+
+.sky-bg {
+  background:
+    radial-gradient(1200px 500px at 85% -10%, rgba(255, 240, 190, 0.9), transparent 60%),
+    radial-gradient(800px 400px at 10% 0%, rgba(255, 255, 255, 0.7), transparent 60%),
+    linear-gradient(180deg, #8fd3ff 0%, #cdeeff 45%, #fff6e5 100%);
+}
+
+.paper-grain {
+  background-image: radial-gradient(rgba(31, 26, 61, 0.06) 1px, transparent 1px);
+  background-size: 14px 14px;
+}
+
+.bunting {
+  height: 26px;
+  background:
+    linear-gradient(135deg, transparent 50%, transparent 50%) 0 0 / 36px 26px,
+    conic-gradient(from -45deg at 50% 0, #e63946 0 90deg, transparent 0) 0 0 / 108px 26px repeat-x,
+    conic-gradient(from -45deg at 50% 0, #ffb703 0 90deg, transparent 0) 36px 0 / 108px 26px repeat-x,
+    conic-gradient(from -45deg at 50% 0, #1a9e8f 0 90deg, transparent 0) 72px 0 / 108px 26px repeat-x;
+}
+
+.no-select {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  touch-action: none;
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(3deg);
+  }
+}
+.floaty {
+  animation: floaty 4s ease-in-out infinite;
+}
+
+@keyframes pop-in {
+  from {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.pop-in {
+  animation: pop-in 0.35s cubic-bezier(0.2, 1.6, 0.4, 1) both;
+}
+
+@keyframes confetti-fall {
+  from {
+    transform: translateY(-20vh) rotate(0);
+  }
+  to {
+    transform: translateY(110vh) rotate(720deg);
+  }
+}
+
+.checker {
+  background-color: #fff;
+  background-image:
+    linear-gradient(45deg, #e9e2d3 25%, transparent 25%),
+    linear-gradient(-45deg, #e9e2d3 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #e9e2d3 75%),
+    linear-gradient(-45deg, transparent 75%, #e9e2d3 75%);
+  background-size: 16px 16px;
+  background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+}
+
+input[type="range"] {
+  accent-color: var(--color-kite);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #e0cfa8;
+  border-radius: 8px;
+}
